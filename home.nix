@@ -8,4 +8,10 @@
 
   # Home pkgs:
   home.packages = with pkgs; [ ];
+
+  # Hyprland:
+  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.package = null;
+  wayland.windowManager.hyprland.portalPackage = null;
+  wayland.windowManager.hyprland.extraConfig = lib.fileContents ./cfg/hypr/hyprland.conf;
 }
