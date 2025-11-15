@@ -1,10 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
-
   # NixOS Version:
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   # Enable flakes:
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -17,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking:
-  networking.hostName = "thenous";
+  networking.hostName = lib.mkDefault "unnamed";
   networking.networkmanager.enable = true;
 
   # Timezone / Locale: 
