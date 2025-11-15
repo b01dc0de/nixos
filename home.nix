@@ -20,4 +20,11 @@
   wayland.windowManager.hyprland.package = null;
   wayland.windowManager.hyprland.portalPackage = null;
   wayland.windowManager.hyprland.extraConfig = lib.fileContents ./cfg/hypr/hyprland.conf;
+
+  # Kitty:
+  programs.kitty.enable = true;
+  programs.kitty.font.name = "JetBrainsMono Nerd Font";
+  programs.kitty.font.size = 12;
+  programs.kitty.settings.enable_audio_bell = false;
+  programs.kitty.themeFile = "Catppuccin-Mocha";
 }
