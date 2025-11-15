@@ -48,14 +48,6 @@
     variant = "";
   };
 
-  # Users:
-  users.users.cka = {
-    isNormalUser = true;
-    description = "CKA";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
   # Fonts:
   fonts = {
     enableDefaultPackages = true;
@@ -73,6 +65,17 @@
       nerd-fonts.ubuntu-sans
     ];
   };
+
+  # Users:
+  users.users.cka = {
+    isNormalUser = true;
+    description = "CKA";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
+
+  # Environment:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # GPU:
   hardware.graphics.enable = true;
@@ -94,8 +97,18 @@
       binPath = "/run/current-system/sw/bin/Hyprland";
     };
   };
+  # Enable GNOME keyring within hyprland (needed for GitHub Desktop):
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.hyprland.enableGnomeKeyring = true;
 
   # Program configuration:
+  programs.chromium.enable = true;
+  programs.chromium.extensions = [
+    "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+    "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
+    "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
+  ];
+
   programs.git.enable = true;
 
   programs.neovim.enable = true;
@@ -110,6 +123,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     efibootmgr
+    github-desktop
     hyprpaper
     kdePackages.dolphin
     kitty
