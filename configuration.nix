@@ -11,12 +11,21 @@
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader:
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.configurationLimit = 16;
+  boot.loader.grub.default = "saved";
+  boot.loader.grub.useOSProber = true;
 
   # Networking:
   networking.hostName = lib.mkDefault "unnamed";
   networking.networkmanager.enable = true;
+
+  # Bluetooth:
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Timezone / Locale: 
   time.timeZone = "America/Chicago";
@@ -47,6 +56,45 @@
     packages = with pkgs; [];
   };
 
+  # Fonts:
+  fonts = {
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+    packages = with pkgs; [
+      nerd-fonts.blex-mono
+      nerd-fonts.fira-code
+      nerd-fonts.hack
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.symbols-only
+      nerd-fonts.terminess-ttf
+      nerd-fonts.ubuntu
+      nerd-fonts.ubuntu-mono
+      nerd-fonts.ubuntu-sans
+    ];
+  };
+
+  # GPU:
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
+
+  # Default session:
+  services.displayManager.defaultSession = "hyprland-uwsm";
+
+  # Hyprland:
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
+  programs.uwsm.enable = true;
+  programs.uwsm.waylandCompositors = {
+    hyprland = {
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "/run/current-system/sw/bin/Hyprland";
+    };
+  };
+
   # Program configuration:
   programs.git.enable = true;
 
@@ -55,6 +103,18 @@
   programs.neovim.viAlias = true;
   programs.neovim.vimAlias = true;
 
+  programs.nh.enable = true;
+  programs.nh.clean.enable = true;
+
   # Pkgs:
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [
+    chromium
+    efibootmgr
+    hyprpaper
+    kdePackages.dolphin
+    kitty
+    neovide
+    waybar
+    wofi
+  ];
 }
