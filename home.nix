@@ -9,6 +9,12 @@
   # Home pkgs:
   home.packages = with pkgs; [ ];
 
+  # Wallpaper:
+  home.file."wallpaper.jpg".source = pkgs.fetchurl {
+    url = "https://unsplash.com/photos/EnEvA02Oz4M/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MjR8fGJydXRhbGlzdCUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjMxNzM4OTZ8MA&force=true";
+    hash = "sha256-ISC0tlBpQ1GDLSFTzKGEI07wOmPUZmfy9uWGAvrLvb8=";
+  };
+
   # Hyprland:
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.package = null;
