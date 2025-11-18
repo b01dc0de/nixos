@@ -69,6 +69,17 @@
     ];
   };
 
+  # Sound:
+  security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
   # Users:
   users.users.cka = {
     isNormalUser = true;
@@ -79,6 +90,7 @@
 
   # Environment:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.variables.EDITOR = "nvim";
 
   # GPU:
   hardware.graphics.enable = true;
@@ -117,11 +129,6 @@
 
   programs.git.enable = true;
 
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-  programs.neovim.viAlias = true;
-  programs.neovim.vimAlias = true;
-
   programs.nh.enable = true;
   programs.nh.clean.enable = true;
 
@@ -137,6 +144,7 @@
     neovide
     obsidian
     playerctl
+    spotify
     waybar
     wofi
   ];

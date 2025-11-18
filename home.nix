@@ -51,8 +51,11 @@
   programs.neovim.enable = true;
   programs.neovim.extraConfig = lib.fileContents ./cfg/nvim/init.vim;
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    nord-vim
+    nord-nvim
   ];
+  programs.neovim.viAlias = true;
+  programs.neovim.vimAlias = true;
+  programs.neovim.vimdiffAlias = true;
 
   # Oh My Posh:
   programs.oh-my-posh.enable = true;
