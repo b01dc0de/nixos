@@ -18,6 +18,7 @@
   boot.loader.grub.configurationLimit = 16;
   boot.loader.grub.default = "saved";
   boot.loader.grub.useOSProber = true;
+  boot.loader.grub.theme = "${pkgs.minimal-grub-theme}";
 
   # Networking:
   networking.hostName = lib.mkDefault "unnamed";
@@ -101,7 +102,10 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
-  # Program configuration:
+  ##########################
+  # Program configuration: #
+  ##########################
+
   programs.chromium.enable = true;
   programs.chromium.extensions = [
     "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
@@ -128,6 +132,7 @@
     kdePackages.dolphin
     kitty
     neovide
+    playerctl
     waybar
     wofi
   ];

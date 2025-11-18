@@ -27,4 +27,5 @@
   programs.kitty.font.size = 12;
   programs.kitty.settings.enable_audio_bell = false;
   programs.kitty.themeFile = "Catppuccin-Mocha";
+  programs.kitty.extraConfig = lib.fileContents ./cfg/kitty/kitty.conf;
 }
