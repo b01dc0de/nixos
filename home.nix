@@ -15,6 +15,17 @@
   # Home pkgs:
   home.packages = with pkgs; [ ];
 
+  # Theming:
+  home.pointerCursor.gtk.enable = true;
+  home.pointerCursor.package = pkgs.nordic;
+  home.pointerCursor.name = "Nordic-cursors";
+  home.pointerCursor.size = 24;
+  gtk.enable = true;
+  gtk.theme.package = pkgs.nordic;
+  gtk.theme.name = "Nordic";
+  gtk.iconTheme.package = pkgs.nordic;
+  gtk.iconTheme.name = "Nordic-bluish";
+
   # Hyprland:
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.package = null;

@@ -142,6 +142,8 @@
     kdePackages.dolphin
     kitty
     neovide
+    nordic
+    nwg-look
     obsidian
     playerctl
     spotify
