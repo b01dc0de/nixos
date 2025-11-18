@@ -47,6 +47,13 @@
   programs.kitty.shellIntegration.enableBashIntegration = true;
   programs.kitty.themeFile = "Catppuccin-Mocha";
 
+  # Neovim:
+  programs.neovim.enable = true;
+  programs.neovim.extraConfig = lib.fileContents ./cfg/nvim/init.vim;
+  programs.neovim.plugins = with pkgs.vimPlugins; [
+    nord-vim
+  ];
+
   # Oh My Posh:
   programs.oh-my-posh.enable = true;
   programs.oh-my-posh.enableBashIntegration = true;
