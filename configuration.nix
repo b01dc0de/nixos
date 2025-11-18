@@ -53,7 +53,9 @@
   fonts = {
     enableDefaultPackages = true;
     fontDir.enable = true;
+    fontconfig.enable = true;
     packages = with pkgs; [
+      oxygenfonts
       nerd-fonts.blex-mono
       nerd-fonts.fira-code
       nerd-fonts.hack
@@ -127,11 +129,13 @@
   environment.systemPackages = with pkgs; [
     chromium
     efibootmgr
+    fastfetch
     github-desktop
     hyprpaper
     kdePackages.dolphin
     kitty
     neovide
+    obsidian
     playerctl
     waybar
     wofi
