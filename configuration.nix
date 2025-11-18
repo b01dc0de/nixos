@@ -102,8 +102,14 @@
   # Hyprland:
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.extraPackages = with pkgs; [
+    where-is-my-sddm-theme
+    kdePackages.qt5compat
+  ];
+  services.displayManager.sddm.theme = "${pkgs.where-is-my-sddm-theme}/share/sddm/themes/where_is_my_sddm_theme";
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
+  programs.hyprland.xwayland.enable = true;
   programs.uwsm.enable = true;
   programs.uwsm.waylandCompositors = {
     hyprland = {
@@ -139,6 +145,7 @@
     fastfetch
     github-desktop
     hyprpaper
+    hyprpicker
     kdePackages.dolphin
     kitty
     neovide
@@ -147,6 +154,7 @@
     obsidian
     playerctl
     spotify
+    vscode-fhs
     waybar
     wofi
   ];
