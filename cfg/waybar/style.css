@@ -10,16 +10,6 @@ window#waybar {
     color: #ffffff;
 }
 
-/*
-window#waybar.empty {
-    background: transparent;
-    background-color: transparent;
-    color: transparent;
-    margin-top: 2px;
-    border-radius: 0px 0px 0px 0px;
-}
-*/
-
 .modules-center {
   margin-top: 2px;
   border-radius: 15px 15px 15px 15px;
@@ -27,13 +17,14 @@ window#waybar.empty {
 }
 
 .modules-left {
-  padding: 0 15px 0 5px;
+  padding: 0 10px 0 5px;
   border-radius: 0px 15px 15px 0px;
   margin-top: 2px;
   background: #000000;
 }
 
 .modules-right {
+    padding: 0 5px 0 5px;
     border-radius: 15px 15px 15px 15px;
     margin-top: 2px;
     background: #000000;
