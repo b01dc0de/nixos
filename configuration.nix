@@ -28,6 +28,9 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
 
+    # Security:
+    security.polkit.enable = true;
+
     # Timezone / Locale: 
     time.timeZone = "America/Chicago";
     i18n.defaultLocale = "en_US.UTF-8";
@@ -90,7 +93,15 @@
 
     # Environment:
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
-    environment.variables.EDITOR = "nvim";
+    environment.variables = {
+        EDITOR = "nvim";
+
+        # XDG Base Directory spec:
+        XDG_CACHE_HOME = "$HOME/.cache";
+        XDG_CONFIG_HOME = "$HOME/.config";
+        XDG_DATA_HOME = "$HOME/.local/share";
+        XDG_STATE_HOME = "$HOME/.local/state";
+    };
 
     # GPU:
     hardware.graphics.enable = true;
@@ -155,6 +166,7 @@
         nwg-look
         obsidian
         playerctl
+        pwvucontrol
         spotify
         vscode-fhs
         waybar
