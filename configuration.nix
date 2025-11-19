@@ -86,6 +86,9 @@
         jack.enable = true;
     };
 
+    # Enable power-profiles-daemon:
+    services.power-profiles-daemon.enable = true;
+
     # Users:
     users.users.cka = {
         isNormalUser = true;
@@ -175,6 +178,7 @@
         spotify
         vscode-fhs
         waybar
+        wl-clipboard
         wofi
     ];
 }

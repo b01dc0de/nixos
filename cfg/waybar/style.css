@@ -36,6 +36,7 @@ window#waybar {
 #cpu,
 #memory,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #temperature {
     padding: 0 8px;
@@ -87,6 +88,22 @@ window#waybar {
 
 #network.disconnected {
     color: #f53c3c;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    color: #f53c3c;
+}
+
+#power-profiles-daemon.balanced {
+    color: #2980b9;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #2ecc71;
 }
 
 #pulseaudio {
