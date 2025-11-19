@@ -62,7 +62,8 @@
     // Right modules:
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": false
     },
 
     "battery": {
@@ -75,12 +76,14 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
     },
 
     "clock": {
         //"format": "{:%a %e %B %I:%M %p}",
-        "format": "{:%I:%M%p}"
+        "format": "{:%I:%M%p}",
+        "tooltip": false
     },
 
     "cpu": {
@@ -89,7 +92,8 @@
     },
 
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "tooltip": false
     },
 
     "network": {
@@ -97,11 +101,12 @@
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": false
     },
 
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 1,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} ",
         "format-bluetooth-muted": "MUTE ",
@@ -112,12 +117,14 @@
             "headphone": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol",
+        "tooltip": false
     },
 
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": [""]
+        "format-icons": [""],
+        "tooltip": false
     }
 }

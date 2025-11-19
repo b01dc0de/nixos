@@ -55,11 +55,11 @@ window#waybar.empty {
 }
 
 #battery {
-    color: #000000;
+    color: #e0e040;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #80ff80;
 }
 
 #battery.critical:not(.charging) {
