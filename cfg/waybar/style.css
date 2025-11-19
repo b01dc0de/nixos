@@ -90,10 +90,6 @@ window#waybar {
     color: #f53c3c;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
 #power-profiles-daemon.performance {
     color: #f53c3c;
 }
