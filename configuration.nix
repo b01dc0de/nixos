@@ -10,6 +10,9 @@
     # Enable unfree packages:
     nixpkgs.config.allowUnfree = true;
 
+    # Enable garbage collection:
+    nix.settings.auto-optimise-store = true;
+
     # Bootloader:
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.grub.enable = true;
@@ -101,6 +104,7 @@
         XDG_CONFIG_HOME = "$HOME/.config";
         XDG_DATA_HOME = "$HOME/.local/share";
         XDG_STATE_HOME = "$HOME/.local/state";
+        XDG_RUNTIME_DIR = "/run/user/$UID";
     };
 
     # GPU:
@@ -150,6 +154,7 @@
 
     programs.nh.enable = true;
     programs.nh.clean.enable = true;
+    programs.nh.clean.extraArgs = "--keep 8";
 
     # Pkgs:
     environment.systemPackages = with pkgs; [
