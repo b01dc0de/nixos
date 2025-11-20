@@ -153,6 +153,8 @@
         "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
     ];
 
+    programs.firefox.enable = true;
+
     programs.git.enable = true;
 
     programs.nh.enable = true;

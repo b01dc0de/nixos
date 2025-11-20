@@ -12,6 +12,11 @@
         hash = "sha256-ISC0tlBpQ1GDLSFTzKGEI07wOmPUZmfy9uWGAvrLvb8=";
     };
 
+    # .Xresources:
+    xresources.properties = {
+        "Xft.dpi" = 144;
+    };
+
     # Home pkgs:
     home.packages = with pkgs; [ ];
 
@@ -43,7 +48,7 @@
     programs.bash.shellAliases = {
         ls = "ls --color=auto";
         ll = "ls -l --color=auto";
-        la = "ls -la --color=auto";
+        la = "ls -lA --color=auto";
     };
 
     # Kitty:
