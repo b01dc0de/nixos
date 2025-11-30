@@ -84,6 +84,7 @@
         alsa.support32Bit = true;
         pulse.enable = true;
         jack.enable = true;
+        wireplumber.enable = true;
     };
 
     # Enable power-profiles-daemon:
@@ -121,10 +122,13 @@
     services.displayManager.sddm.enable = true;
     services.displayManager.sddm.wayland.enable = true;
     services.displayManager.sddm.extraPackages = with pkgs; [
-        where-is-my-sddm-theme
         kdePackages.qt5compat
     ];
-    services.displayManager.sddm.theme = "${pkgs.where-is-my-sddm-theme}/share/sddm/themes/where_is_my_sddm_theme";
+    #services.displayManager.sddm.theme = "${pkgs.where-is-my-sddm-theme}/share/sddm/themes/where_is_my_sddm_theme"; # Default, no overrides
+    services.displayManager.sddm.theme = "${(pkgs.where-is-my-sddm-theme.override {
+        themeConfig.General = {
+            showSessionsByDefault="true";
+        }; })}/share/sddm/themes/where_is_my_sddm_theme";
 
     # Hyprland:
     programs.hyprland.enable = true;
@@ -177,6 +181,7 @@
         obsidian
         playerctl
         pwvucontrol
+        tmux
         spotify
         vscode-fhs
         waybar

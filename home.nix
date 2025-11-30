@@ -51,6 +51,11 @@
         la = "ls -lA --color=auto";
     };
 
+    # Direnv:
+    programs.direnv.enable = true;
+    programs.direnv.enableBashIntegration = true;
+    programs.direnv.nix-direnv.enable = true;
+
     # Kitty:
     programs.kitty.enable = true;
     programs.kitty.enableGitIntegration = true;
