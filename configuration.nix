@@ -46,11 +46,26 @@
         LC_TIME = "en_US.UTF-8";
     };
 
-    # Keymap:
+    # Keyboard:
     services.xserver.xkb = {
         layout = "us";
         variant = "";
     };
+
+    # Sound:
+    security.rtkit.enable = true;
+    services.pulseaudio.enable = false;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        jack.enable = true;
+        wireplumber.enable = true;
+    };
+
+    # Enable power-profiles-daemon:
+    services.power-profiles-daemon.enable = true;
 
     # Fonts:
     fonts = {
@@ -71,21 +86,6 @@
             nerd-fonts.ubuntu-sans
         ];
     };
-
-    # Sound:
-    security.rtkit.enable = true;
-    services.pulseaudio.enable = false;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        jack.enable = true;
-        wireplumber.enable = true;
-    };
-
-    # Enable power-profiles-daemon:
-    services.power-profiles-daemon.enable = true;
 
     # Users:
     users.users.cka = {
@@ -167,7 +167,9 @@
         chromium
         efibootmgr
         fastfetch
+        gimp3
         github-desktop
+        hyprlauncher
         hyprpaper
         hyprpicker
         kdePackages.dolphin
@@ -184,7 +186,6 @@
         waybar
         wayland-utils
         wl-clipboard
-        wofi
     ];
 
     # NixOS Version:
