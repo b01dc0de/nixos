@@ -185,6 +185,7 @@
         spotify
         vscode-fhs
         waybar
+        wayland-utils
         wl-clipboard
         wofi
     ];
