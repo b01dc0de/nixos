@@ -55,6 +55,9 @@
     programs.direnv.enableBashIntegration = true;
     programs.direnv.nix-direnv.enable = true;
 
+    # Hyprpanel:
+    programs.hyprpanel.enable = true;
+
     # Kitty:
     programs.kitty.enable = true;
     programs.kitty.enableGitIntegration = true;
