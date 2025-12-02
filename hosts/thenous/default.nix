@@ -4,6 +4,7 @@
     imports = [
         ./hardware-configuration.nix
         ../../configuration.nix
+        ../../modules/games.nix
     ];
 
     networking.hostName = lib.mkForce "thenous";

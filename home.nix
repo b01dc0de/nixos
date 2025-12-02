@@ -2,7 +2,6 @@
 
 {
     programs.home-manager.enable = true;
-    home.stateVersion = "25.11";
     home.username = "cka";
     home.homeDirectory = "/home/cka";
 
@@ -82,4 +81,8 @@
     programs.oh-my-posh.enable = true;
     programs.oh-my-posh.enableBashIntegration = true;
     programs.oh-my-posh.useTheme = "nordtron";
+
+    # State Version:
+    # DO NOT CHANGE! See comment above system.stateVersion in ./configuration.nix
+    home.stateVersion = "25.11";
 }
