@@ -5,9 +5,11 @@
     min-height: 25px;
 }
 
-window#waybar {
-    background: transparent;
-    color: #eef0ed;
+.modules-left {
+  padding: 0 10px 0 5px;
+  border-radius: 0px 15px 15px 0px;
+  margin-top: 2px;
+  background: #0e1420;
 }
 
 .modules-center {
@@ -16,18 +18,32 @@ window#waybar {
   background: #0e1420;
 }
 
-.modules-left {
-  padding: 0 10px 0 5px;
-  border-radius: 0px 15px 15px 0px;
-  margin-top: 2px;
-  background: #0E1420;
-}
-
 .modules-right {
   padding: 0 5px 0 5px;
   border-radius: 15px 15px 15px 15px;
   margin-top: 2px;
-  background: #0E1420;
+  background: #0e1420;
+}
+
+window#waybar {
+    background: transparent;
+    color: #eef0ed;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    border: none;
+    color: #dcc0ff;
+}
+
+#workspaces button {
+    background: none;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    transition: none;
+    -gtk-icon-shadow: none;
+    -gtk-icon-effect: none;
 }
 
 #backlight,
@@ -51,7 +67,7 @@ window#waybar {
 }
 
 #battery.charging, #battery.plugged {
-    color: #6BA65C;
+    color: #6ba65c;
 }
 
 #battery.critical:not(.charging) {
