@@ -35,6 +35,9 @@
     wayland.windowManager.hyprland.package = null;
     wayland.windowManager.hyprland.portalPackage = null;
     wayland.windowManager.hyprland.extraConfig = lib.fileContents ./cfg/hypr/hyprland.conf;
+    # Hyprland ecosystem:
+    programs.hyprpanel.enable = true;
+    home.file.".config/hypr/hyprtoolkit.conf".source = ./cfg/hypr/hyprtoolkit.conf;
 
     ##########################
     # Program configuration: #
@@ -54,9 +57,6 @@
     programs.direnv.enable = true;
     programs.direnv.enableBashIntegration = true;
     programs.direnv.nix-direnv.enable = true;
-
-    # Hyprpanel:
-    programs.hyprpanel.enable = true;
 
     # Kitty:
     programs.kitty.enable = true;
