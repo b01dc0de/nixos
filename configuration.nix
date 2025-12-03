@@ -143,6 +143,9 @@
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.hyprland.enableGnomeKeyring = true;
 
+    # Enable Upower:
+    services.upower.enable = true;
+
     ##########################
     # Program configuration: #
     ##########################
