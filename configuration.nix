@@ -164,6 +164,8 @@
 
     # Pkgs:
     environment.systemPackages = with pkgs; [
+        btop
+        busybox
         chromium
         efibootmgr
         fastfetch
@@ -180,8 +182,8 @@
         obsidian
         playerctl
         pwvucontrol
-        tmux
         spotify
+        tmux
         vscode-fhs
         waybar
         wayland-utils
