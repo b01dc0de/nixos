@@ -37,7 +37,7 @@
     wayland.windowManager.hyprland.extraConfig = lib.fileContents ./cfg/hypr/hyprland.conf;
     # Hyprland ecosystem:
     programs.hyprpanel.enable = true;
-    programs.hyprpanel.settings = (builtins.fromJSON (builtins.readFile ./cfg/hypr/hyprpanel_config.json));
+    programs.hyprpanel.settings = (builtins.fromJSON (builtins.readFile ./cfg/hyprpanel/concat.json));
     home.file.".config/hypr/hyprtoolkit.conf".source = ./cfg/hypr/hyprtoolkit.conf;
 
     ##########################
