@@ -73,9 +73,9 @@
 
     # Neovim:
     programs.neovim.enable = true;
-    programs.neovim.extraConfig = lib.fileContents ./cfg/nvim/init.vim;
+    programs.neovim.extraLuaConfig = lib.fileContents ./cfg/nvim/init.lua;
     programs.neovim.plugins = with pkgs.vimPlugins; [
-        nord-nvim
+        catppuccin-nvim
     ];
     programs.neovim.viAlias = true;
     programs.neovim.vimAlias = true;
