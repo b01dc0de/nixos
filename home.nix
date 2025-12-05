@@ -73,18 +73,32 @@
 
     # Neovim:
     programs.neovim.enable = true;
-    programs.neovim.extraLuaConfig = lib.fileContents ./cfg/nvim/init.lua;
+    #programs.neovim.extraLuaConfig = lib.fileContents ./cfg/nvim/init.lua;
     programs.neovim.plugins = with pkgs.vimPlugins; [
         catppuccin-nvim
+        lazy-nvim
+        nvim-treesitter
+        (nvim-treesitter.withPlugins (p: [
+           p.c
+           p.cpp
+           p.lua
+           p.markdown
+           p.nix
+        ]))
+        which-key-nvim
     ];
     programs.neovim.viAlias = true;
     programs.neovim.vimAlias = true;
     programs.neovim.vimdiffAlias = true;
+    home.file.".config/nvim" = {
+        source = ./cfg/nvim;
+        recursive = true;
+    };
 
     # Oh My Posh:
     programs.oh-my-posh.enable = true;
     programs.oh-my-posh.enableBashIntegration = true;
-    programs.oh-my-posh.useTheme = "nordtron";
+    programs.oh-my-posh.useTheme = "catppuccin";
 
     # State Version:
     # DO NOT CHANGE! See comment above system.stateVersion in ./configuration.nix

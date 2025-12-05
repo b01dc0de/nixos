@@ -1,3 +1,5 @@
-vim.cmd("source ~/nixos/cfg/nvim/.vimrc");
+vim.cmd("source ~/.config/nvim/.vimrc")
 
-vim.cmd("colorscheme catppuccin");
+vim.cmd("colorscheme catppuccin")
+
+require("config.lazy")

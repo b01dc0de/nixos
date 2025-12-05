@@ -153,6 +153,7 @@
     programs.chromium.enable = true;
     programs.chromium.extensions = [
         "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+        "bkkmolkhemgaeaeggcmfbghljjjoofoh" # Catppuccin Mocha
         "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
         "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
     ];
@@ -160,6 +161,8 @@
     programs.firefox.enable = true;
 
     programs.git.enable = true;
+
+    programs.lazygit.enable = true;
 
     programs.nh.enable = true;
     programs.nh.clean.enable = true;
@@ -170,8 +173,13 @@
         btop
         busybox
         chromium
+        clang
+        clang-tools
+        curl
         efibootmgr
         fastfetch
+        fd
+        fzf
         gimp3
         github-desktop
         hyprlauncher
@@ -185,6 +193,7 @@
         obsidian
         playerctl
         pwvucontrol
+        ripgrep
         spotify
         tmux
         vscode-fhs
