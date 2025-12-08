@@ -113,7 +113,7 @@
     hardware.graphics.enable32Bit = true;
 
     # Default session:
-    services.displayManager.defaultSession = "hyprland-uwsm";
+    services.displayManager.defaultSession = "plasma"; # "hyprland-uwsm"
 
     # SDDM:
     services.displayManager.sddm.enable = true;
@@ -142,6 +142,9 @@
     # Enable GNOME keyring within hyprland (needed for GitHub Desktop):
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.hyprland.enableGnomeKeyring = true;
+
+    # KDE:
+    services.desktopManager.plasma6.enable = true;
 
     # Enable Upower:
     services.upower.enable = true;
