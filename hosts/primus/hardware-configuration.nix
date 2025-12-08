@@ -4,29 +4,28 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+    imports =
+        [ (modulesPath + "/installer/scan/not-detected.nix")
+        ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+    boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" ];
+    boot.initrd.kernelModules = [ ];
+    boot.kernelModules = [ "kvm-amd" ];
+    boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
+    fileSystems."/" =
     { device = "/dev/disk/by-uuid/ab145ba3-a988-48b6-971a-d5e9f3680b5e";
-      fsType = "ext4";
+        fsType = "ext4";
     };
 
-  fileSystems."/boot" =
+    fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/68B8-A117";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+        fsType = "vfat";
+        options = [ "fmask=0077" "dmask=0077" ];
     };
 
+    swapDevices = [ { device = "/var/lib/swapfile"; size = 16*1024; } ];
 
-  swapDevices = [ { device = "/var/lib/swapfile"; size = 16*1024; } ];
-
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
